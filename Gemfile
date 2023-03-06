@@ -64,9 +64,22 @@ group :development do
   # gem "spring"
 end
 
+# group :test do
+#   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+#   gem "capybara"
+#   gem "selenium-webdriver"
+#   gem "webdrivers"
+# end
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 4.0.0'
+end
+
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '>= 3.2.6'
+  gem 'selenium-webdriver'
+  # Easy installation and use of web drivers to run system tests with browsers
+  gem 'webdrivers'
 end
